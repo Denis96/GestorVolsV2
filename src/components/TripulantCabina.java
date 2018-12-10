@@ -4,16 +4,10 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
 
-public class TripulantCabina {
+public class TripulantCabina extends Tripulant {
 
-    private final static Scanner DADES = new Scanner(System.in);
 
-    private String passaport;
-    private String nom;
-    private int edat;
-    private Date dataAlta;
-    private int horesVol;
-    private String rang;
+
     private int barres;
 
     /*
@@ -24,66 +18,16 @@ public class TripulantCabina {
      - Inicialitzar l'atribut dataAlta amb l'hora actual del sistema.
      - Inicialitzar l'atribut barres mitjançant el mètode pertinent d'aquesta classe.
      */
-    public TripulantCabina(String passaport, String nom, int edat, int horesVol, String rang) {
-        this.passaport = passaport;
-        this.nom = nom;
-        this.edat = edat;
-        dataAlta = new Date();
-        this.horesVol = horesVol;
-        assignarBarres(rang);
+    public TripulantCabina(String passaport, String nom, int edat, Date dataAlta, int horesVol, String rang, int barres) {
+        super(passaport,nom,edat,dataAlta,horesVol,rang);
+        this.barres=barres;
     }
 
 
     /*
     Mètodes accessors
      */
-    public String getPassaport() {
-        return passaport;
-    }
-
-    public void setPassaport(String passaport) {
-        this.passaport = passaport;
-    }
-
-    public String getNom() {
-        return nom;
-    }
-
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
-    public int getEdat() {
-        return edat;
-    }
-
-    public void setEdat(int edat) {
-        this.edat = edat;
-    }
-
-    public Date getDataAlta() {
-        return dataAlta;
-    }
-
-    public void setDataAlta(Date dataAlta) {
-        this.dataAlta = dataAlta;
-    }
-
-    public int getHoresVol() {
-        return horesVol;
-    }
-
-    public void setHoresVol(int horesVol) {
-        this.horesVol = horesVol;
-    }
-
-    public String getRang() {
-        return rang;
-    }
-
-    public void setRang(String rang) {
-        this.rang = rang;
-    }
+    
 
     public int getBarres() {
         return barres;
@@ -114,7 +58,7 @@ public class TripulantCabina {
     Retorn: El nou tripulant de cabina.
      */
     public static TripulantCabina nouTripulantCabina() {
-        String passaport, nom;
+        String passaport, nom, rang;
         int edat, hores;
 
         System.out.println("\nPassaport del tripulant:");
@@ -129,8 +73,9 @@ public class TripulantCabina {
         hores = DADES.nextInt();
 
         System.out.println("\nQuin rang té el tripulant?: C-Comandant, CP-Copilot, EV-Enginyer de vol");
+        rang = DADES.next();
 
-        return new TripulantCabina(passaport, nom, edat, hores, DADES.next());
+        return new TripulantCabina(passaport, nom, edat, hores, rang);
     }
 
     /*
