@@ -151,7 +151,7 @@ public class TCP {
         System.out.println("\nEdat: " + edat);
         System.out.println("\nData d'alta: " + new SimpleDateFormat("dd-MM-yyyy").format(dataAlta));
         System.out.println("\nHores de vol: " + horesVol);
-        System.out.println("\nRang: " + rang);
+        System.out.println("\nRang: " + rang);asd
     }
 
 }
