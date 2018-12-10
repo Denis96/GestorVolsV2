@@ -1,6 +1,6 @@
 package components;
 
-abstract class Ruta implements Component{
+public abstract class Ruta implements Component{
     private String codi;
     private String aeroportOri;
     private String aeroportDes;

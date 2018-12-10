@@ -3,7 +3,7 @@ package components;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-abstract class Tripulant implements Component{
+public abstract class Tripulant implements Component{
 
     private String passaport;
     private String nom;
@@ -79,7 +79,7 @@ abstract class Tripulant implements Component{
         horesVol = (int) demanarDades("\nQuines són les hores de vol actuals del tripulant?", 1); 
     }
 
-    public void mostrarComponent() { ////////////////////////////////////// comprobar esto
+    public void mostrarComponent() {
         System.out.println("\nLes dades del tripulant amb passaport " + passaport + " són:");
         System.out.println("\nNom: " + nom);
         System.out.println("\nEdat: " + edat);
@@ -87,6 +87,4 @@ abstract class Tripulant implements Component{
         System.out.println("\nHores de vol: " + horesVol);
         System.out.println("\nRang: " + rang);
     }
-	
-	
 }
