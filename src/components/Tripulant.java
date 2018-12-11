@@ -13,7 +13,7 @@ abstract class Tripulant implements Component{
     private String rang;
 
     ///// CONSTRUCTOR /////
-	public Tripulant(String passaport, String nom, int edat, Date dataAlta, int horesVol, String rang) {
+	public Tripulant(String passaport, String nom, int edat, int horesVol, String rang) {
 		this.passaport = passaport;
 		this.nom = nom;
 		this.edat = edat;
@@ -80,7 +80,7 @@ abstract class Tripulant implements Component{
     }
 
     public void mostrarComponent() { ////////////////////////////////////// comprobar esto
-        System.out.println("\nLes dades del tripulant de cabina amb passaport " + passaport + " són:");
+        System.out.println("\nLes dades del tripulant amb passaport " + passaport + " són:");
         System.out.println("\nNom: " + nom);
         System.out.println("\nEdat: " + edat);
         System.out.println("\nData d'alta: " + new SimpleDateFormat("dd-MM-yyyy").format(dataAlta));

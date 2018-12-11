@@ -2,12 +2,9 @@ package components;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Scanner;
 
 public class TripulantCabina extends Tripulant {
-
-
-
+	
     private int barres;
 
     /*
@@ -18,21 +15,18 @@ public class TripulantCabina extends Tripulant {
      - Inicialitzar l'atribut dataAlta amb l'hora actual del sistema.
      - Inicialitzar l'atribut barres mitjançant el mètode pertinent d'aquesta classe.
      */
-    public TripulantCabina(String passaport, String nom, int edat, Date dataAlta, int horesVol, String rang, int barres) {
-        super(passaport,nom,edat,dataAlta,horesVol,rang);
-        this.barres=barres;
+    public TripulantCabina(String passaport, String nom, int edat, int horesVol, String rang) {
+        super(passaport,nom,edat,horesVol,rang);
+        assignarBarres(getRang());
     }
 
 
     /*
     Mètodes accessors
      */
-    
-
     public int getBarres() {
         return barres;
     }
-
     public void setBarres(int barres) {
         this.barres = barres;
     }
@@ -102,36 +96,13 @@ public class TripulantCabina extends Tripulant {
     
      Retorn: cap
      */
-    public void modificarTripulantCabina() {
-
-        System.out.println("\nEl passaport actual del tripulant és:" + passaport);
-        System.out.println("\nQuin és el nou passaport del tripulant?");
-        passaport = DADES.next();
-        DADES.nextLine(); //Neteja de buffer
-        System.out.println("\nEl nom actual del tripulant és:" + nom);
-        System.out.println("\nQuin és el nou nom del tripulant?");
-        nom = DADES.nextLine();
-        System.out.println("\nL'edat actual del tripulant és:" + edat);
-        System.out.println("\nQuina és la nova edat del tripulant?");
-        edat = DADES.nextInt();
-
-        System.out.println("Les hores de vol actuals del tripulant són:" + horesVol);
-        System.out.println("\nQuines són les hores de vol actuals del tripulant:");
-        horesVol = DADES.nextInt();
-
-        System.out.println("\nEl rang actual del tripulant és:" + rang);
-        System.out.println("\nQuin és el nou rang del tripulant?: C-Comandant, CP-Copilot, EV-Enginyer de vol");
-        assignarBarres(DADES.next());
-
+    public void modificarComponent() {
+        super.modificarComponent();
+		assignarBarres(getRang());
     }
 
-    public void mostrarTripulantCabina() {
-        System.out.println("\nLes dades del tripulant de cabina amb passaport " + passaport + " són:");
-        System.out.println("\nNom: " + nom);
-        System.out.println("\nEdat: " + edat);
-        System.out.println("\nData d'alta: " + new SimpleDateFormat("dd-MM-yyyy").format(dataAlta));
-        System.out.println("\nHores de vol: " + horesVol);
-        System.out.println("\nRang: " + rang);
+    public void mostrarComponent() {
+		super.mostrarComponent();
         System.out.println("\nBarres: " + barres);
     }
 
@@ -148,19 +119,19 @@ public class TripulantCabina extends Tripulant {
 
         switch (pRang) {
             case "C":
-                rang = "Comandant";
                 barres = 4;
+		setRang("Comandant");
                 break;
             case "CP":
-                rang = "Copilot";
-                if (horesVol < 1500) {
+		setRang("Copilot");
+                if (getHoresVol() < 1500) {
                     barres = 2;
                 } else {
                     barres = 3;
                 }
                 break;
             case "EV":
-                rang = "Enginyer de vol";
+		setRang("Enginyer de vol");
                 barres = 1;
                 break;
             default:
