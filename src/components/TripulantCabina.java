@@ -120,10 +120,10 @@ public class TripulantCabina extends Tripulant {
         switch (pRang) {
             case "C":
                 barres = 4;
-				setRang("Comandant");
+		setRang("Comandant");
                 break;
             case "CP":
-				setRang("Copilot");
+		setRang("Copilot");
                 if (getHoresVol() < 1500) {
                     barres = 2;
                 } else {
@@ -131,7 +131,7 @@ public class TripulantCabina extends Tripulant {
                 }
                 break;
             case "EV":
-				setRang("Enginyer de vol");
+		setRang("Enginyer de vol");
                 barres = 1;
                 break;
             default:
