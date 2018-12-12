@@ -7,10 +7,6 @@ package principal;
 import java.text.ParseException;
 import java.util.Scanner;
 
-/**
- *
- * @author root
- */
 public class Aplicacio {
 
     private final static Scanner DADES = new Scanner(System.in);
