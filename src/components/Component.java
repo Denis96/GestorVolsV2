@@ -3,10 +3,6 @@ package components;
 import java.text.ParseException;
 import java.util.Scanner;
 
-/**
- *
- * @author Ismael
- */
 public interface Component {
 
 	Scanner DADES = new Scanner(System.in);

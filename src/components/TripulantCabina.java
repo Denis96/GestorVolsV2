@@ -7,23 +7,14 @@ public class TripulantCabina extends Tripulant {
 
 	private int barres;
 
-	/*
-     CONSTRUCTOR
-     Paràmetres: valors per tots els atributs de la classe menys dataAlta i barres.
-     Accions:
-     - Assignar als atributs els valors passats com a paràmetres.
-     - Inicialitzar l'atribut dataAlta amb l'hora actual del sistema.
-     - Inicialitzar l'atribut barres mitjançant el mètode pertinent d'aquesta classe.
-	 */
+	/// CONTRUCTOR ///
 	public TripulantCabina(String passaport, String nom, int edat, int horesVol, String rang) {
 		super(passaport, nom, edat, horesVol, rang);
 		assignarBarres(getRang());
 	}
 
 
-	/*
-    Mètodes accessors
-	 */
+	/// GETTERS&SETTERS ///
 	public int getBarres() {
 		return barres;
 	}
@@ -32,6 +23,7 @@ public class TripulantCabina extends Tripulant {
 		this.barres = barres;
 	}
 
+	/// METODES ///
 	public static TripulantCabina nouTripulantCabina() {
 		String passaport, nom, rang;
 		int edat, hores;

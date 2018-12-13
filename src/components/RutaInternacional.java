@@ -5,12 +5,7 @@ public class RutaInternacional extends Ruta {
 	private String paisOri;
 	private String paisDes;
 
-	/*
-     CONSTRUCTOR
-     Paràmetres: valors per tots els atributs de la classe.
-     Accions:
-     - Assignar als atributs els valors passats com a paràmetres.
-	 */
+	/// CONTRUCTOR ///
 	public RutaInternacional(String codi, String aeroportOri, String aeroportDes, String paisOri, String paisDes, double distancia) {
 		super(codi, aeroportOri, aeroportDes, distancia);
 
@@ -19,9 +14,7 @@ public class RutaInternacional extends Ruta {
 	}
 
 
-	/*
-    Mètodes accessors
-	 */
+	/// GETTERS ///
 	public String getPaisOri() {
 		return paisOri;
 	}
@@ -30,6 +23,7 @@ public class RutaInternacional extends Ruta {
 		return paisDes;
 	}
 
+	/// SETTERS ///
 	public void setPaisOri(String paisOri) {
 		this.paisOri = paisOri;
 	}
@@ -38,15 +32,7 @@ public class RutaInternacional extends Ruta {
 		this.paisDes = paisDes;
 	}
 
-
-	/*
-    Paràmetres: cap
-    Accions:
-    - Demanar a l'usuari les dades per consola per crear una nova ruta internacional.
-    Les dades a demanar són les que necessita el constructor.
-    - Heu de tenir en compte que els aeroports països no tene per què estar formats per una única 
-    paraula, per exemple, El Prat o Regne Unit.
-	 */
+	/// METODES ///
 	public static RutaInternacional novaRutaInternacional() {
 
 		String codi, aeroportOri, aeroportDes, paisOri, paisDes; //, continentOri, continentDes;
@@ -69,16 +55,6 @@ public class RutaInternacional extends Ruta {
 		return new RutaInternacional(codi, aeroportOri, aeroportDes, paisOri, paisDes, distancia);
 	}
 
-	/*
-     Paràmetres: cap
-     Accions:
-     - Demanar a l'usuari que introdueixi les noves dades de l'objecte actual
-     i modificar els atributs corresponents d'aquest objecte.
-     - Li heu de mostrar a l'usuari el valor actual dels atributs de l'objecte
-     actual, abans de modificar-los.
-    
-     Retorn: cap
-	 */
 	public void modificarComponent() {
 		super.modificarComponent();
 

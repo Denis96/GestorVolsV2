@@ -4,36 +4,21 @@ public class RutaTransoceanica extends RutaIntercontinental {
 
 	private String ocea;
 
-	/*
-     CONSTRUCTOR
-     Paràmetres: valors per tots els atributs de la classe.
-     Accions:
-     - Assignar als atributs els valors passats com a paràmetres.
-	 */
+	/// CONTRUCTOR ///
 	public RutaTransoceanica(String codi, String aeroportOri, String aeroportDes, String paisOri, String paisDes, String continentOri, String continentDes, String ocea, double distancia) {
 		super(codi, aeroportOri, aeroportDes, paisOri, paisDes, continentOri, continentDes, distancia);
 		this.ocea = ocea;
 	}
 
-	/*
-    Mètodes accessors
-	 */
+	/// GETTERS&SETTERS ///
 	public String getOcea() {
 		return ocea;
 	}
-
 	public void setOcea(String ocea) {
 		this.ocea = ocea;
 	}
 
-	/*
-    Paràmetres: cap
-    Accions:
-    - Demanar a l'usuari les dades per consola per crear una nova ruta transcoceanica.
-    Les dades a demanar són les que necessita el constructor.
-    - Heu de tenir en compte que els aeroports i països no tene per què estar formats
-    per una única paraula, per exemple, El Prat i Regne Unit.
-	 */
+	/// METODES ///
 	public static RutaTransoceanica novaRutaTransoceanica() {
 
 		String codi, aeroportOri, aeroportDes, paisOri, paisDes, continentOri, continentDes, ocea;
@@ -62,16 +47,6 @@ public class RutaTransoceanica extends RutaIntercontinental {
 		return new RutaTransoceanica(codi, aeroportOri, aeroportDes, paisOri, paisDes, continentOri, continentDes, ocea, distancia);
 	}
 
-	/*
-     Paràmetres: cap
-     Accions:
-     - Demanar a l'usuari que introdueixi les noves dades de l'objecte actual
-     i modificar els atributs corresponents d'aquest objecte.
-     - Li heu de mostrar a l'usuari el valor actual dels atributs de l'objecte
-     actual, abans de modificar-los.
-    
-     Retorn: cap
-	 */
 	public void modificarComponent() {
 		super.modificarComponent();
 

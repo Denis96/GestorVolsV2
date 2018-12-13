@@ -5,13 +5,7 @@ public class RutaIntercontinental extends RutaInternacional {
 	private String continentOri;
 	private String continentDes;
 
-	/*
-     CONSTRUCTOR
-     Paràmetres: valors per tots els atributs de la classe.
-     Accions:
-     - Assignar als atributs els valors passats com a paràmetres.
-	 */
-
+	/// CONTRUCTOR ///
 	public RutaIntercontinental(String codi, String aeroportOri, String aeroportDes, String paisOri, String paisDes, String continentOri, String continentDes, double distancia) {
 		super(codi, aeroportOri, aeroportDes, paisOri, paisDes, distancia);
 
@@ -19,9 +13,7 @@ public class RutaIntercontinental extends RutaInternacional {
 		this.continentDes = continentDes;
 	}
 
-	/*
-    Mètodes accessors
-	 */
+	/// GETTERS ///
 	public String getContinentOri() {
 		return continentOri;
 	}
@@ -30,6 +22,7 @@ public class RutaIntercontinental extends RutaInternacional {
 		return continentDes;
 	}
 
+	/// SETTERS ///
 	public void setContinentDes(String continentDes) {
 		this.continentDes = continentDes;
 	}
@@ -38,14 +31,7 @@ public class RutaIntercontinental extends RutaInternacional {
 		this.continentOri = continentOri;
 	}
 
-	/*
-    Paràmetres: cap
-    Accions:
-    - Demanar a l'usuari les dades per consola per crear una nova ruta internacional.
-    Les dades a demanar són les que necessita el constructor.
-    - Heu de tenir en compte que els aeroports i països no tene per què estar formats
-    per una única paraula, per exemple, El Prat i Regne Unit.
-	 */
+	/// METODES ///
 	public static RutaIntercontinental novaRutaIntercontinental() {
 
 		String codi, aeroportOri, aeroportDes, paisOri, paisDes, continentOri, continentDes;
@@ -72,16 +58,6 @@ public class RutaIntercontinental extends RutaInternacional {
 		return new RutaIntercontinental(codi, aeroportOri, aeroportDes, paisOri, paisDes, continentOri, continentDes, distancia);
 	}
 
-	/*
-     Paràmetres: cap
-     Accions:
-     - Demanar a l'usuari que introdueixi les noves dades de l'objecte actual
-     i modificar els atributs corresponents d'aquest objecte.
-     - Li heu de mostrar a l'usuari el valor actual dels atributs de l'objecte
-     actual, abans de modificar-los.
-    
-     Retorn: cap
-	 */
 	public void modificarComponent() {
 		super.modificarComponent();
 

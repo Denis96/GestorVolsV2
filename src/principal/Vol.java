@@ -29,6 +29,7 @@ public class Vol implements Component{
     private LocalTime horaArribada;
     private String durada;
 
+	/// CONTRUCTOR ///
     public Vol(String codi, Date dataSortida, Date dataArribada, LocalTime horaSortida, LocalTime horaArribada) {
         this.codi = codi;
         ruta = null;
@@ -43,9 +44,6 @@ public class Vol implements Component{
         calcularDurada();
     }
 
-    /*
-    Mètodes accessors
-    */
 	/// GETTERS ///
 	public String getCodi() {
 		return codi;
@@ -115,18 +113,7 @@ public class Vol implements Component{
 		this.durada = durada;
 	}
 
-    /*
-    Paràmetres: cap
-    Accions:
-    - Demanar a l'usuari les dades per consola per crear un nou vol.
-    Les dades a demanar són les que necessita el constructor.
-    - En el cas de les dates, li hem de demanar a l'usuari que les introdueixi
-    amb el format dd-mm-yyyy. Penseu que la data introduïda per l'usuari serà
-    de tipus String i nosaltres l'hem de convertir a data.
-    - En el cas de les hores només haurem de demanar l'hora i minuts, els segons
-    i nanosegons no els tindrem en compte.
-    Retorn: El nou vol.
-     */
+	/// METODES ///
     public static Vol nouVol() throws ParseException {
         String codi;
         Date dataSortida, dataArribada;
@@ -156,21 +143,6 @@ public class Vol implements Component{
         return new Vol(codi, dataSortida, dataArribada, horaSortida, horaArribada);
     }
 
-    /*
-     Paràmetres: cap
-     Accions:
-     - Demanar a l'usuari que introdueixi les noves dades de l'objecte actual
-     i modificar els atributs corresponents d'aquest objecte, excepte ruta, avio,
-     tripulacioCabina, tcps, posicioTripulacioCabina i posicioTcps.
-     - Li heu de mostrar a l'usuari el valor actual dels atributs de l'objecte
-     actual, abans de modificar-los. Les dates les heu de mostrar amb el format
-     dd-mm-yyyy, i les hores amb el format hh:mm.
-     - Per demanar els nous valors de les dates i les hores, farem el mateix que
-     en el mètode anterior nouVol().
-     - Si es modifiquen els atributs de data o d'hora, també s'haurà de modificar
-     el valor de durada mitjançant el mètode adient d'aquesta classe.
-     Retorn: cap
-     */
     public void modificarComponent() throws ParseException {
         int hora, minuts;
 
@@ -195,15 +167,6 @@ public class Vol implements Component{
 		//calcularDurada(); //new preguntar
     }
 
-    /*
-     Paràmetres: cap
-     Accions:
-     - Se li assignarà a l'atribut durada el valor tenint en compte que la durada
-     és la diferència de temps entre la data i hora de sortida, i la data i hora
-     d'arribada.
-     - La durada ha de tenir el format "X h - Y m", on X seran les hores de durada i Y els minuts
-     Retorn: cap
-     */
     private void calcularDurada() {
         long segonsDurada = (getDataArribada().getTime() + (getHoraArribada().getHour() * 3600 + getHoraArribada().getMinute() * 60)) - (getDataSortida().getTime() + (getHoraSortida().getHour() * 3600 + getHoraSortida().getMinute() * 60));
 

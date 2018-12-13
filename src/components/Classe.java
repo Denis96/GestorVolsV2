@@ -5,20 +5,13 @@ public class Classe implements Component {
 	private String nom;
 	private int capacitat;
 
-	/*
-     CONSTRUCTOR
-     Paràmetres: valors per tots els atributs de la classe.
-     Accions:
-     - Assignar als atributs els valors passats com a paràmetres.
-	 */
+	/// CONTRUCTOR ///
 	public Classe(String nom, int capacitat) {
 		this.nom = nom;
 		this.capacitat = capacitat;
 	}
 
-	/*
-    Mètodes accessors    
-	 */
+	/// GETTERS&SETTERS ///
 	public String getNom() {
 		return nom;
 	}
@@ -35,15 +28,7 @@ public class Classe implements Component {
 		this.capacitat = capacitat;
 	}
 
-	/*
-    Paràmetres: cap
-    Accions:
-    - Demanar a l'usuari les dades per consola per crear una nova classe d'avió. 
-      Les dades a demanar són les que necessita el constructor.
-    - També heu de tenir en compte que el nom, no té perquè estar formt per una única
-    paraula, per exemple, Turista Preferent.
-    Retorn: La nova classe.
-	 */
+	/// METODES ///
 	public static Classe novaClasse() {
 		String nom;
 		int capacitat;
@@ -56,15 +41,6 @@ public class Classe implements Component {
 		return new Classe(nom, capacitat);
 	}
 
-	/*
-     Paràmetres: cap
-     Accions:
-     - Demanar a l'usuari que introdueixi les noves dades de l'objecte actual
-     i modificar els atributs corresponents d'aquest objecte.
-     - Li heu de mostrar a l'usuari el valor actual dels atributs de l'objecte
-     actual, abans de modificar-los
-     Retorn: cap
-	 */
 	public void modificarComponent() {
 		System.out.println("\nNom de la classe: " + nom);
 		nom = (String) demanarDades("\nEntra el nou nom:", 4);

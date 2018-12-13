@@ -7,6 +7,7 @@ public abstract class Ruta implements Component {
 	private String aeroportDes;
 	private double distancia;
 
+	/// CONTRUCTOR ///
 	public Ruta(String codi, String aeroportOri, String aeroportDes, double distancia) {
 		this.codi = codi;
 		this.aeroportOri = aeroportOri;
@@ -14,6 +15,7 @@ public abstract class Ruta implements Component {
 		this.distancia = distancia;
 	}
 
+	/// GETTERS ///
 	public String getCodi() {
 		return codi;
 	}
@@ -30,6 +32,7 @@ public abstract class Ruta implements Component {
 		return distancia;
 	}
 
+	/// SETTERS ///
 	public void setCodi(String codi) {
 		this.codi = codi;
 	}
@@ -46,6 +49,7 @@ public abstract class Ruta implements Component {
 		this.distancia = distancia;
 	}
 
+	/// METODES ///
 	public void modificarComponent() {
 
 		System.out.println("\nEl codi de la ruta és:" + codi);

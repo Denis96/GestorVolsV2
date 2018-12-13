@@ -1,8 +1,3 @@
-/*
- * Classe que defineix una companyia. Una companyia es defineix per un codi i un 
- * nom. A més, contindrà vectors amb avions, rutes nacionals, rutes internacionals,
- * rutes intercontinentals, rutes transocèaniques, tripulants de cabina, TCPs i vols.
- */
 package principal;
 
 import components.Avio;
